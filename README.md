@@ -39,7 +39,7 @@ Ikolo is a Python-based framework designed to assist financial analysts in perfo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/financial-analyst-program.git
+   git clone https://github.com/gogiraFoundation/ikolo.git
    ```
 
 2. Navigate to the project directory:
@@ -119,7 +119,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 For questions or feedback, reach out to:
 - **Email**: gogirafoundation@gmail.com
-- **GitHub Issues**: https://github.com/gogiraFoundation/financial-analyst-program/issues
+- **GitHub Issues**: https://github.com/gogiraFoundation/ikolo.git/issues
 
 ---
 
