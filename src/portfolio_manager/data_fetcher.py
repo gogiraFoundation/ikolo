@@ -18,6 +18,9 @@ class DataFetcher:
         Returns:
             pd.DataFrame: DataFrame containing stock price data.
         """
-        stock = yf.Ticker(ticker)
-        data = stock.history(start=start_date, end=end_date)
-        return data.reset_index()
+        try:
+            stock = yf.Ticker(ticker)
+            data = stock.history(start=start_date, end=end_date)
+            return data.reset_index()
+        except Exception as e:
+            print(f"Error: {e}")
