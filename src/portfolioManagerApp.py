@@ -6,6 +6,7 @@ from portfolio_manager.technical_analysis import TechnicalAnalysis
 from portfolio_manager.fundamental_analysis import FundamentalAnalysis
 from portfolio_manager.advisor import Advisor
 from login_system import login_system
+from SessionManager import SessionManager
 
 
 class PortfolioManagerApp:
@@ -14,6 +15,7 @@ class PortfolioManagerApp:
     """
 
     def __init__(self):
+        self.session_manager = SessionManager()
         self.visualizer = Visualizer()
         self.calculator = MetricsCalculator()
         self.fetcher = DataFetcher()
@@ -120,6 +122,19 @@ class PortfolioManagerApp:
         """
         Display the main menu and handle user choices.
         """
+        # User login handled by session manager
+        user_id = input("Enter your user ID: ")
+        session_data = self.session_manager.load_session(user_id)
+        
+        if session_data:
+            print(f"Welcome back, {user_id}!")
+            print("Your last activity:")
+            print(f"- Last Ticker: {session_data['last_ticker']}")
+            print(f"- Last Action: {session_data['last_action']}")
+            print(f"- Last Threshold: {session_data['last_threshold']}")
+        else:
+            print(f"Hello, {user_id}! Let's get started.")
+        
         while True:
             print("\n=== Main Menu ===")
             print("1. Perform Analysis")
