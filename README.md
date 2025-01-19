@@ -129,5 +129,4 @@ For questions or feedback, reach out to:
 - Real-time analytics using streaming data.
 - Advanced ML models for sentiment analysis on financial news.
 
----
-Empower your financial analysis workflow with this Python-based program!
+
