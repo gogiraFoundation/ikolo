@@ -1,0 +1,4 @@
+2025-01-17 20:29:00,221 - INFO - Required directories verified or created.
+2025-01-17 20:29:32,890 - INFO - Starting stock analysis...
+2025-01-17 20:29:46,915 - ERROR - Error during stock analysis: 'Logger' object has no attribute 'error'
+2025-01-17 20:29:46,915 - CRITICAL - Unhandled exception occurred

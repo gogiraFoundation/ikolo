@@ -1,12 +1,17 @@
 import yfinance as yf
+import logging
 
 class FundamentalAnalysis:
     """
     Class for performing fundamental analysis on stocks.
-
+    
     Methods:
     - get_financial_ratios: Fetch and return key financial ratios for a given stock ticker.
     """
+
+    def __init__(self):
+        self.logger = logging.getLogger("FundamentalAnalysis")
+        logging.basicConfig(level=logging.INFO)
 
     @staticmethod
     def get_financial_ratios(ticker: str) -> dict:
@@ -17,12 +22,16 @@ class FundamentalAnalysis:
             ticker (str): Stock ticker symbol.
 
         Returns:
-            dict: Dictionary of financial ratios.
+            dict: Dictionary of financial ratios or error message if unable to fetch.
         """
         try:
             # Fetch stock data
             stock = yf.Ticker(ticker)
             info = stock.info
+            
+            # Check if 'info' contains valid data
+            if not info or "symbol" not in info or info["symbol"] != ticker:
+                return {"Error": f"Invalid ticker symbol or data unavailable for {ticker}."}
 
             # Extract key financial ratios
             ratios = {
@@ -54,8 +63,9 @@ class FundamentalAnalysis:
                     else "N/A"
                 ),
             }
+            
             return ratios
 
         except Exception as e:
-            # Handle errors gracefully
+            logging.error(f"Error while fetching financial ratios for {ticker}: {e}")
             return {"Error": f"Unable to fetch financial ratios for {ticker}. Reason: {str(e)}"}

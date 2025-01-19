@@ -1,0 +1,3 @@
+2025-01-17 19:35:56,193 - INFO - Required directories verified or created.
+2025-01-17 19:36:58,535 - INFO - Starting stock analysis...
+2025-01-17 19:37:43,484 - ERROR - Error during stock analysis: Logger.__init__() missing 1 required positional argument: 'name'

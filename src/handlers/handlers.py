@@ -151,18 +151,3 @@ class PortfolioManager:
             print(f"Portfolio loaded from '{file_path}'.")
         except Exception as e:
             print(f"Error loading portfolio from file: {e}")
-
-
-# Example Usage
-if __name__ == "__main__":
-    watchlist_manager = WatchlistManager()
-    portfolio_manager = PortfolioManager()
-
-    # Watchlist operations
-    watchlist_manager.add_to_watchlist("AAPL", 150)
-    #watchlist_manager.show_watchlist()
-    watchlist_manager.save_to_file("watchlist\watchlist.txt")
-
-    # Portfolio operations
-    #portfolio_manager.add_to_portfolio("GOOG", 10, 2800)
-    portfolio_manager.save_to_file("portfolio\portfolio.txt")

@@ -1,0 +1,2 @@
+2025-01-17 20:42:01,879 - INFO - Cache directory created: src/data/sys_file/cache_dir
+2025-01-17 20:42:17,510 - ERROR - Error saving cache file src/data/sys_file/cache_dir/AAPL_2012-01-01_2025-01-01.pkl: [Errno 2] No such file or directory: 'src/data/sys_file/cache_dir/AAPL_2012-01-01_2025-01-01.pkl'

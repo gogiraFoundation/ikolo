@@ -1,0 +1,5 @@
+{
+    "default_tickers": ["AAPL", "MSFT", "GOOGL"],
+    "data_directory": "./data",
+    "module_directory": "./src"
+}

@@ -3,11 +3,12 @@ import schedule
 import json
 from portfolio_manager.data_fetcher import DataFetcher
 from datetime import datetime
-import logging
+import os
+import sys
 
-
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from logs.logger import Logger
 
 
 class Tracker:
@@ -18,7 +19,10 @@ class Tracker:
         Initialize the Tracker instance.
         """
         self.fetcher = DataFetcher()
+        self.logger =  Logger("Tracker")
         self.watchlist = []
+    
+
 
     def check_price(self):
         """Fetch the latest stock prices and check against thresholds."""

@@ -31,3 +31,10 @@ class UtilityHandler:
         if moving_avg_window > 0 and volatility_window > 0:
             return moving_avg_window, volatility_window
         return None, None
+    
+    @staticmethod
+    def validate_threshold(value):
+        try:
+            return float(value)
+        except ValueError:
+            raise ValueError("Threshold must be a numeric value.")

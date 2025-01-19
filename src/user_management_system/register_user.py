@@ -6,7 +6,7 @@ import getpass
 
 
 class RegisterUser:
-    def __init__(self, db_file="data/user_database.json"):
+    def __init__(self, db_file="data/sys_file/user_db/user_database.json"):
         """
         Initialize the RegisterUser class with a specified JSON database file.
         Creates the database directory if it doesn't exist.
