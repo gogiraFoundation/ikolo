@@ -1,0 +1,4 @@
+2025-01-19 15:39:23,653 - INFO - Required directories verified or created.
+2025-01-19 15:39:49,008 - INFO - Starting stock analysis...
+2025-01-19 15:39:55,483 - INFO - Analyzing stock: AAPL
+2025-01-19 15:41:31,704 - INFO - Stock analysis completed successfully.

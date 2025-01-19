@@ -1,6 +1,14 @@
 from datetime import datetime
 import yfinance as yf
 import os
+import json
+import os
+import sys
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from logs.logger import Logger
+from file_manager.fileManager import FileManager
 
 
 def ensure_directory_exists(file_path):
@@ -68,52 +76,50 @@ def is_valid_date(date_str):
         return False
 
 
-class WatchlistManager:
+class PortfolioManager:
     """
-    Class for managing stock watchlists.
+    Class for managing stock portfolios.
     """
     def __init__(self):
-        self.watchlist = []
+        self._file_manager_ = FileManager()
+        self.logger = Logger(name="PortfolioManager")
+        self.portfolio = []
 
-    def add_to_watchlist(self, ticker, threshold):
+    def add_to_portfolio(self, ticker, shares, purchase_price):
         if not is_valid_ticker(ticker):
+            self.logger.log_error(f"Invalid ticker symbol '{ticker}'.")
             print(f"Error: Invalid ticker symbol '{ticker}'.")
             return
-        self.watchlist.append({'ticker': ticker, 'threshold': threshold})
-        print(f"Added '{ticker}' with threshold '{threshold}' to the watchlist.")
-
-    def remove_from_watchlist(self, ticker):
-        self.watchlist = [item for item in self.watchlist if item['ticker'] != ticker]
-        print(f"Removed '{ticker}' from the watchlist.")
+        self.portfolio.append({'ticker': ticker, 'shares': shares, 'purchase_price': purchase_price})
+        self.logger.log_info(f"Added {shares} shares of '{ticker}' at ${purchase_price:.2f} to the portfolio.")
+        print(f"Added {shares} shares of '{ticker}' at ${purchase_price:.2f} to the portfolio.")
 
     def save_to_file(self, file_path):
-        full_path = ensure_directory_exists(file_path)
         try:
+            full_path = self._file_manager_.ensure_directory_exists(file_path)
             with open(full_path, 'w') as f:
-                for item in self.watchlist:
-                    f.write(f"{item['ticker']},{item['threshold']}\n")
-            print(f"Watchlist saved to '{full_path}'.")
+                for item in self.portfolio:
+                    f.write(f"{item['ticker']},{item['shares']},{item['purchase_price']}\n")
+            self.logger.log_info(f"Portfolio saved to '{full_path}'.")
+            print(f"Portfolio saved to '{full_path}'.")
         except Exception as e:
-            print(f"Error saving watchlist to file: {e}")
+            self.logger.log_error(f"Error saving portfolio to file: {e}")
+            print(f"Error saving portfolio to file: {e}")
 
     def load_from_file(self, file_path):
         try:
-            with open(file_path, 'r') as f:
-                self.watchlist = [
-                    {'ticker': line.split(',')[0], 'threshold': float(line.split(',')[1].strip())}
+            full_path = self._file_manager_.ensure_directory_exists(file_path)
+            with open(full_path, 'r') as f:
+                self.portfolio = [
+                    {'ticker': line.split(',')[0], 'shares': int(line.split(',')[1]), 'purchase_price': float(line.split(',')[2].strip())}
                     for line in f
                 ]
-            print(f"Watchlist loaded from '{file_path}'.")
+            self.logger.log_info(f"Portfolio loaded from '{full_path}'.")
+            print(f"Portfolio loaded from '{full_path}'.")
         except Exception as e:
-            print(f"Error loading watchlist from file: {e}")
+            self.logger.log_error(f"Error loading portfolio from file: {e}")
+            print(f"Error loading portfolio from file: {e}")
 
-    def show_watchlist(self):
-        if not self.watchlist:
-            print("Watchlist is empty.")
-        else:
-            print("Current Watchlist:")
-            for item in self.watchlist:
-                print(f"Ticker: {item['ticker']}, Threshold: {item['threshold']}")
 
 
 class PortfolioManager:
@@ -121,33 +127,41 @@ class PortfolioManager:
     Class for managing stock portfolios.
     """
     def __init__(self):
+        self._file_manager_ = FileManager()
+        self.logger = Logger(name="PortfolioManager")
         self.portfolio = []
 
     def add_to_portfolio(self, ticker, shares, purchase_price):
         if not is_valid_ticker(ticker):
+            self.logger.log_error(f"Invalid ticker symbol '{ticker}'.")
             print(f"Error: Invalid ticker symbol '{ticker}'.")
             return
         self.portfolio.append({'ticker': ticker, 'shares': shares, 'purchase_price': purchase_price})
+        self.logger.log_info(f"Added {shares} shares of '{ticker}' at ${purchase_price:.2f} to the portfolio.")
         print(f"Added {shares} shares of '{ticker}' at ${purchase_price:.2f} to the portfolio.")
 
     def save_to_file(self, file_path):
-        full_path = ensure_directory_exists(file_path)
         try:
+            full_path = self._file_manager_.ensure_directory_exists(file_path)
             with open(full_path, 'w') as f:
                 for item in self.portfolio:
                     f.write(f"{item['ticker']},{item['shares']},{item['purchase_price']}\n")
+            self.logger.log_info(f"Portfolio saved to '{full_path}'.")
             print(f"Portfolio saved to '{full_path}'.")
         except Exception as e:
+            self.logger.log_error(f"Error saving portfolio to file: {e}")
             print(f"Error saving portfolio to file: {e}")
-            
 
     def load_from_file(self, file_path):
         try:
-            with open(file_path, 'r') as f:
+            full_path = self._file_manager_.ensure_directory_exists(file_path)
+            with open(full_path, 'r') as f:
                 self.portfolio = [
                     {'ticker': line.split(',')[0], 'shares': int(line.split(',')[1]), 'purchase_price': float(line.split(',')[2].strip())}
                     for line in f
                 ]
-            print(f"Portfolio loaded from '{file_path}'.")
+            self.logger.log_info(f"Portfolio loaded from '{full_path}'.")
+            print(f"Portfolio loaded from '{full_path}'.")
         except Exception as e:
+            self.logger.log_error(f"Error loading portfolio from file: {e}")
             print(f"Error loading portfolio from file: {e}")

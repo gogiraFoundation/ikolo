@@ -1,8 +1,13 @@
 import yfinance as yf
 import sqlite3
 import os
+import sys
 from datetime import datetime, timedelta
 
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from file_manager.fileManager import FileManager
 
 class StockSearcher:
     """Class for searching stocks with caching and API integration."""
@@ -19,12 +24,13 @@ class StockSearcher:
         """
         self.tickers = tickers
         self.db_path = db_path
+        self.file_manager = FileManager()
         self.connection = None
         self._initialize_cache()
 
     def _initialize_cache(self):
         """Initialize the SQLite cache database."""
-        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
+        self.file_manager.ensure_directory_exists(self.db_path)
         self.connection = sqlite3.connect(self.db_path)
         cursor = self.connection.cursor()
         cursor.execute("""
@@ -100,5 +106,3 @@ class StockSearcher:
         """Close the SQLite database connection."""
         if self.connection:
             self.connection.close()
-
-

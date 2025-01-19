@@ -60,35 +60,40 @@ class PortfolioManagerApp:
 
     def ensure_directories_exist(self):
         """Ensure required directories exist."""
-        # Define file paths before usage
-        self.watchlist_file = os.path.join(self.data_directory, "watchlist", "watchlist.txt")
-        self.portfolio_file = os.path.join(self.data_directory, "portfolio", "portfolio.txt")
-        
-        # Ensure directories exist
-        self.file_manager.ensure_directory_exists(os.path.dirname(self.watchlist_file))
-        self.file_manager.ensure_directory_exists(os.path.dirname(self.portfolio_file))
-        self.logger.log_info("Required directories verified or created.")
+        try:
+            self.watchlist_file = os.path.join(self.data_directory, "watchlist", "watchlist.txt")
+            self.portfolio_file = os.path.join(self.data_directory, "portfolio", "portfolio.txt")
+            
+            # Ensure directories exist
+            self.file_manager.ensure_directory_exists(os.path.dirname(self.watchlist_file))
+            self.file_manager.ensure_directory_exists(os.path.dirname(self.portfolio_file))
+            self.logger.log_info("Required directories verified or created.")
+        except Exception as e:
+            self.logger.log_error("Error ensuring directories exist", e)
+            raise
+
     
     def perform_analysis(self):
         """Perform stock analysis."""
         self.logger.log_info("Starting stock analysis...")
         try:
             ticker = UserInteractionHandler.get_ticker()
+            self.logger.log_info(f"Analyzing stock: {ticker}")
             if not UtilityHandler.validate_ticker(ticker):
                 UserInteractionHandler.display_message("Invalid ticker.")
-                self.logger.log_warning("Invalid ticker entered.")
+                self.logger.log_warning(f"Invalid ticker entered: {ticker}")
                 return
 
             start_date, end_date = UserInteractionHandler.get_dates()
             if not UtilityHandler.validate_dates(start_date, end_date):
                 UserInteractionHandler.display_message("Invalid dates.")
-                self.logger.log_warning("Invalid date range provided.")
+                self.logger.log_warning(f"Invalid date range provided: {start_date} - {end_date}")
                 return
 
             self._analyze_stock(ticker, start_date, end_date)
             self.logger.log_info("Stock analysis completed successfully.")
         except Exception as e:
-            self.logger.log_error("Error during stock analysis", e)
+            self.logger.log_error(f"Error during stock analysis for ticker {ticker}", e)
             raise
 
     def _analyze_stock(self, ticker, start_date, end_date):
@@ -144,8 +149,10 @@ class PortfolioManagerApp:
             self.watchlist_manager.add_to_watchlist(ticker, threshold)
             self.watchlist_manager.save_to_file(self.watchlist_file)
             UserInteractionHandler.display_message(f"Tracking {ticker} with a threshold of {threshold}.")
+            self.logger.log_info(f"Added {ticker} to watchlist with threshold {threshold}")
         except ValueError:
             UserInteractionHandler.display_message("Invalid input for threshold.")
+            self.logger.log_warning(f"Invalid threshold input for ticker {ticker}")
 
     def portfolio_operations(self):
         """Perform portfolio operations."""
@@ -190,8 +197,10 @@ class PortfolioManagerApp:
         tickers = [ticker.strip().upper() for ticker in tickers_input.split(",") if ticker.strip()]
         if not tickers:
             UserInteractionHandler.display_message("No valid tickers provided.")
+            self.logger.log_warning("No tickers provided for search.")
             return
         self.search_stocks(tickers)
+
 
     def get_actions(self):
         return {

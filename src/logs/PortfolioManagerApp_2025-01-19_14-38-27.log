@@ -1,0 +1,5 @@
+2025-01-19 14:38:27,434 - INFO - Required directories verified or created.
+2025-01-19 14:39:13,158 - INFO - Starting stock analysis...
+2025-01-19 14:39:16,298 - INFO - Analyzing stock: AAPL
+2025-01-19 14:39:48,795 - ERROR - Error during stock analysis for ticker AAPL: name 'os' is not defined
+2025-01-19 14:39:48,795 - CRITICAL - Unhandled exception occurred

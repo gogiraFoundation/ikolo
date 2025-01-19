@@ -5,6 +5,10 @@ class UserInteractionHandler:
     @staticmethod
     def get_user_input(prompt):
         return input(prompt).strip()
+    
+    @staticmethod
+    def get_password(prompt):
+        return input(prompt).strip()
 
     @staticmethod
     def display_message(message):

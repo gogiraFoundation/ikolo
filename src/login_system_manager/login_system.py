@@ -8,7 +8,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from user_management_system.register_user import RegisterUser
 from handlers.userInteractionHandlers import UserInteractionHandler
 
-#E:\Users\gogir\gogira\ikolo\ikolo\src\user_management_system
 
 class LoginSystem:
     """Manages the login process and user actions."""

@@ -1,0 +1,5 @@
+2025-01-19 14:31:37,739 - INFO - Required directories verified or created.
+2025-01-19 14:31:53,517 - INFO - Starting stock analysis...
+2025-01-19 14:32:00,436 - INFO - Analyzing stock: AAPL
+2025-01-19 14:32:39,883 - ERROR - Error during stock analysis for ticker AAPL: 'FileManager' object has no attribute 'get_full_path'
+2025-01-19 14:32:39,883 - CRITICAL - Unhandled exception occurred

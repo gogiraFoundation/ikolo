@@ -1,27 +1,27 @@
 import os
 import sys
-# Add the `src` directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
-
+from datetime import datetime, timedelta
 import pickle
 from typing import Union
-from datetime import datetime, timedelta
 import pandas as pd
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from file_manager.fileManager import FileManager
 from logs.logger import Logger
 
 class CacheData:
     """Handles cached stock data retrieval."""
-    
+
     CACHE_EXPIRATION_TIME = timedelta(hours=24)  # Cache expiration time (24 hours by default)
 
-    def __init__(self, ticker: str, start_date: str, end_date: str, cache_dir: str = "src/data/sys_file/cache_dir"):
+    def __init__(self, ticker: str, start_date: str, end_date: str, cache_dir: str = "data/sys_file/cache_dir"):
         self.ticker = ticker
         self.start_date = start_date
         self.end_date = end_date
         self.cache_dir = cache_dir
         self.file_manager = FileManager()
-        self.logger = Logger("Cachedata")
+        self.logger = Logger("CacheData")
 
         # Ensure the cache directory exists
         self.ensure_directories_exist()
@@ -29,11 +29,8 @@ class CacheData:
     def ensure_directories_exist(self):
         """Ensure the cache directory exists. Create it if necessary."""
         try:
-            if not os.path.exists(self.cache_dir):
-                self.file_manager.ensure_directory_exists(self.cache_dir)
-                self.logger.log_info(f"Cache directory created: {self.cache_dir}")
-            else:
-                self.logger.log_info(f"Cache directory already exists: {self.cache_dir}")
+            self.file_manager.ensure_directory_exists(self.cache_dir)
+            self.logger.log_info(f"Cache directory ensured: {self.cache_dir}")
         except Exception as e:
             self.logger.log_error(f"Error ensuring cache directory exists: {e}")
 
@@ -45,7 +42,7 @@ class CacheData:
     def _load_cache(self) -> Union[pd.DataFrame, None]:
         """Load cached data from the file, considering expiration time."""
         cache_filename = self._get_cache_filename()
-        if os.path.exists(cache_filename):
+        if self.file_manager.read_file(cache_filename):
             try:
                 with open(cache_filename, "rb") as f:
                     cache_data = pickle.load(f)
@@ -55,7 +52,7 @@ class CacheData:
                         return cache_data['data']
                     else:
                         self.logger.log_info(f"Cache expired for {cache_filename}. Fetching new data.")
-                        os.remove(cache_filename)  # Remove expired cache
+                        self.file_manager.delete_file(cache_filename)  # Remove expired cache
             except (pickle.UnpicklingError, EOFError) as pickling_error:
                 self.logger.log_error(f"Error loading cache file {cache_filename}: {pickling_error}")
             except Exception as e:

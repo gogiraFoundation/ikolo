@@ -1,0 +1,5 @@
+2025-01-19 14:17:44,963 - INFO - Required directories verified or created.
+2025-01-19 14:18:20,630 - INFO - Starting stock analysis...
+2025-01-19 14:18:31,176 - INFO - Analyzing stock: AAPL
+2025-01-19 14:18:45,245 - ERROR - Error during stock analysis for ticker AAPL: 'FileManager' object has no attribute 'file_exists'
+2025-01-19 14:18:45,245 - CRITICAL - Unhandled exception occurred

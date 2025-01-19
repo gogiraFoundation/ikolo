@@ -3,7 +3,13 @@ import os
 import hashlib
 import re
 import getpass
+import sys
 
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from file_manager.fileManager import FileManager
+from logs.logger import Logger
 
 class RegisterUser:
     def __init__(self, db_file="data/sys_file/user_db/user_database.json"):
@@ -12,7 +18,11 @@ class RegisterUser:
         Creates the database directory if it doesn't exist.
         """
         self.db_file = db_file
-        os.makedirs(os.path.dirname(self.db_file), exist_ok=True)
+        self.file_manager = FileManager()
+        self.logger = Logger("RegisterUser")
+
+        # Ensure the database directory exists
+        self.file_manager.ensure_directory_exists(os.path.dirname(self.db_file))
         self.user_database = self.load_database()
 
     def load_database(self):
@@ -21,9 +31,10 @@ class RegisterUser:
         Returns an empty list if the file is not found.
         """
         try:
-            with open(self.db_file, 'r') as file:
-                return json.load(file)
-        except FileNotFoundError:
+            data = self.file_manager.read_file(self.db_file)
+            return json.loads(data) if data else []
+        except json.JSONDecodeError as e:
+            self.logger.log_error(f"Error decoding JSON file: {e}")
             return []
 
     def save_database(self):
@@ -31,10 +42,9 @@ class RegisterUser:
         Save the current user database to the JSON file.
         """
         try:
-            with open(self.db_file, 'w') as file:
-                json.dump(self.user_database, file, indent=4)
-        except IOError as e:
-            print(f"Error saving database: {e}")
+            self.file_manager.write_file(self.db_file, json.dumps(self.user_database, indent=4))
+        except Exception as e:
+            self.logger.log_error(f"Error saving database: {e}")
 
     @staticmethod
     def hash_password(password: str):
@@ -85,14 +95,14 @@ class RegisterUser:
         username = username.lower()
         user = next((user for user in self.user_database if user["username"] == username), None)
         if not user:
-            print("Error: User not found.")
+            self.logger.log_error("Error: User not found.")
             return False
 
         if user["password"] == self.hash_password(password):
-            print(f"Welcome back, {user['first_name']}!")
+            self.logger.log_info(f"Welcome back, {user['first_name']}!")
             return True
         else:
-            print("Error: Incorrect password.")
+            self.logger.log_error("Error: Incorrect password.")
             return False
 
     def update_user_details(self, username, first_name=None, second_name=None, email=None, password=None):

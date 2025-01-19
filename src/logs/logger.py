@@ -1,6 +1,11 @@
 import logging
 import os
 from datetime import datetime
+import sys
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from file_manager.fileManager import FileManager
 
 
 class Logger:
@@ -8,9 +13,10 @@ class Logger:
     A logger class that handles all logs for optimal operation.
     """
 
-    def __init__(self, name: str, log_dir: str = "logs"):
+    def __init__(self, name: str, log_dir: str = "logs/logs_dir/"):
         """
         Initialize the logger with a specific name and configure logging to console and file.
+
         Args:
             name (str): The name of the logger, typically the module or class name.
             log_dir (str): The directory where log files will be saved.
@@ -19,8 +25,7 @@ class Logger:
         self.logger.setLevel(logging.INFO)
 
         # Ensure the log directory exists
-        base_directory = os.path.join(os.getcwd(), log_dir)
-        os.makedirs(base_directory, exist_ok=True)
+        base_directory = FileManager.ensure_directories_exist(log_dir)
 
         # Create a log file with a timestamp
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -45,6 +50,7 @@ class Logger:
     def log_info(self, message: str):
         """
         Log an info message.
+
         Args:
             message (str): The message to log.
         """
@@ -53,6 +59,7 @@ class Logger:
     def log_warning(self, message: str):
         """
         Log a warning message.
+
         Args:
             message (str): The message to log.
         """
@@ -61,6 +68,7 @@ class Logger:
     def log_error(self, message: str, exception: Exception = None):
         """
         Log an error message, optionally with an exception.
+
         Args:
             message (str): The error message to log.
             exception (Exception, optional): The exception to log.
@@ -73,6 +81,7 @@ class Logger:
     def log_debug(self, message: str):
         """
         Log a debug message.
+
         Args:
             message (str): The message to log.
         """
@@ -81,8 +90,10 @@ class Logger:
     def log_critical(self, message: str, exception=None):
         """
         Log a critical message.
+
         Args:
             message (str): The message to log.
+            exception (Exception, optional): The exception to log.
         """
         self.logger.critical(message)
         if exception:

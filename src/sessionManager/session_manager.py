@@ -1,18 +1,20 @@
 import sqlite3
 import os
-
+from file_manager.fileManager import FileManager
 
 class SessionManager:
     """Class to manage user sessions."""
     
-    def __init__(self, db_path: str = "data/sessions.db"):
+    def __init__(self, db_path: str = "data/sys_file/session_dir/sessions.db"):
         self.db_path = db_path
+        self.file_manager = FileManager()
         self.connection = None
         self._initialize_database()
     
     def _initialize_database(self):
         """Initialize the database if it doesn't exist."""
         if not os.path.exists(self.db_path):
+            self.file_manager.ensure_directory_exists(self.db_path)
             self.connection = sqlite3.connect(self.db_path)
             cursor = self.connection.cursor()
             cursor.execute("""
