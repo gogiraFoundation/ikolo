@@ -1,5 +1,7 @@
 {
     "default_tickers": ["AAPL", "MSFT", "GOOGL"],
-    "data_directory": "./data",
-    "module_directory": "./src"
+    "data_directory": "data",
+    "watchlist_subdir": "watchlist",
+    "portfolio_subdir": "portfolio",
+    "module_directory": "src/"
 }

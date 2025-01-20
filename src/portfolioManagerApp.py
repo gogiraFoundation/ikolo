@@ -49,30 +49,42 @@ class PortfolioManagerApp:
         """Load application configuration from a file."""
         config_path = os.path.join(os.getcwd(), "config.json")
         config = self.file_manager.load_json_file(config_path)
+
         if config:
+            # Load settings from config
             self.default_tickers = config.get("default_tickers", ["AAPL", "MSFT", "GOOGL"])
-            self.data_directory = config.get("data_directory", os.path.join(os.getcwd(), "data"))
+            self.data_directory = os.path.abspath(config.get("data_directory", os.path.join(os.getcwd(), "data")))
+            self.watchlist_dir = os.path.join(self.data_directory, config.get("watchlist_subdir", "watchlist"))
+            self.portfolio_dir = os.path.join(self.data_directory, config.get("portfolio_subdir", "portfolio"))
         else:
+            # Use default settings if config file is missing
             self.logger.log_warning("Config file not found. Using default settings.")
             self.default_tickers = ["AAPL", "MSFT", "GOOGL"]
-            self.data_directory = os.path.join(os.getcwd(), "data")
+            self.data_directory = os.path.abspath(os.path.join(os.getcwd(), "data"))
+            self.watchlist_dir = os.path.join(self.data_directory, "watchlist")
+            self.portfolio_dir = os.path.join(self.data_directory, "portfolio")
+
+        # Ensure data_directory is a valid path
+        if not self.data_directory:
+            self.logger.log_error("Data directory path is not valid.")
+            raise ValueError("Data directory path is not valid.")
 
 
-    def ensure_directories_exist(self):
-        """Ensure required directories exist."""
-        try:
-            self.watchlist_file = os.path.join(self.data_directory, "watchlist", "watchlist.txt")
-            self.portfolio_file = os.path.join(self.data_directory, "portfolio", "portfolio.txt")
-            
-            # Ensure directories exist
-            self.file_manager.ensure_directory_exists(os.path.dirname(self.watchlist_file))
-            self.file_manager.ensure_directory_exists(os.path.dirname(self.portfolio_file))
-            self.logger.log_info("Required directories verified or created.")
-        except Exception as e:
-            self.logger.log_error("Error ensuring directories exist", e)
-            raise
+        # Ensure the PORTFOLIO directory exists
+        self.file_manager.ensure_directory_exists(self.portfolio_dir)
+        
+        # Construct the correct portfolio file path
+        self.portfolio_file = os.path.join(self.portfolio_dir, "portfolio.json")
+        print(f"Portfolio file path: {self.portfolio_file}")
 
-    
+
+        # Log configuration for debugging
+        self.logger.log_info(f"Configuration loaded: default_tickers={self.default_tickers}")
+        self.logger.log_info(f"Data directory: {self.data_directory}")
+        self.logger.log_info(f"Watchlist directory: {self.watchlist_dir}")
+        self.logger.log_info(f"Portfolio directory: {self.portfolio_dir}")
+
+
     def perform_analysis(self):
         """Perform stock analysis."""
         self.logger.log_info("Starting stock analysis...")
@@ -135,27 +147,54 @@ class PortfolioManagerApp:
             UserInteractionHandler.display_message(f"Error during stock search: {e}")
         finally:
             self.searcher.close_connection()
-
+    
     def track_stocks(self):
         """Track a stock with a threshold alert."""
-        ticker = UserInteractionHandler.get_ticker()
-
-        if not UtilityHandler.validate_ticker(ticker):
-            UserInteractionHandler.display_message("Invalid ticker.")
-            return
-
         try:
-            threshold = UtilityHandler.validate_threshold(UserInteractionHandler.get_user_input("Enter price threshold: "))
+            # Get the ticker symbol from the user
+            ticker = UserInteractionHandler.get_ticker()
+
+            # Validate the ticker
+            if not UtilityHandler.validate_ticker(ticker):
+                UserInteractionHandler.display_message("Invalid ticker symbol. Please try again.")
+                self.logger.log_warning(f"Invalid ticker symbol entered: {ticker}")
+                return
+
+            # Get and validate the threshold
+            threshold_input = UserInteractionHandler.get_user_input("Enter price threshold: ")
+            threshold = UtilityHandler.validate_threshold(threshold_input)
+
+            # Ensure the watchlist directory exists
+            self.file_manager.ensure_directory_exists(self.watchlist_dir)
+            
+
+            # Construct the correct watchlist file path
+            self.watchlist_file = os.path.join(self.watchlist_dir, "watchlist.json")
+            print(f"Watchlist file path: {self.watchlist_file}")
+
+            # Add stock to the watchlist
             self.watchlist_manager.add_to_watchlist(ticker, threshold)
+
+            # Save the watchlist to the watchlist file
             self.watchlist_manager.save_to_file(self.watchlist_file)
+
+            # Confirm success
             UserInteractionHandler.display_message(f"Tracking {ticker} with a threshold of {threshold}.")
             self.logger.log_info(f"Added {ticker} to watchlist with threshold {threshold}")
-        except ValueError:
-            UserInteractionHandler.display_message("Invalid input for threshold.")
-            self.logger.log_warning(f"Invalid threshold input for ticker {ticker}")
+
+        except ValueError as e:
+            UserInteractionHandler.display_message("Invalid input for threshold. Please enter a valid number.")
+            self.logger.log_warning(f"Invalid threshold input for ticker {ticker}: {str(e)}")
+
+        except Exception as e:
+            UserInteractionHandler.display_message("An error occurred while tracking the stock.")
+            self.logger.log_error(f"Unexpected error while tracking stock: {str(e)}")
+
+
 
     def portfolio_operations(self):
         """Perform portfolio operations."""
+        
         actions = {
             "1": self._view_portfolio,
             "2": self.track_stocks,
@@ -175,6 +214,7 @@ class PortfolioManagerApp:
 
     def _view_portfolio(self):
         """View the portfolio."""
+        
         self.portfolio_manager.load_from_file(self.portfolio_file)
 
     def _save_portfolio(self):
@@ -184,6 +224,7 @@ class PortfolioManagerApp:
     def _exit_operations(self):
         """Exit portfolio operations."""
         UserInteractionHandler.display_message("Exiting portfolio operations.")
+
 
     def _invalid_choice(self):
         """Handle invalid menu choices."""
@@ -250,7 +291,6 @@ class PortfolioManagerApp:
     def run(self):
         """Run the application."""
         try:
-            self.ensure_directories_exist()
             UserInteractionHandler.display_message("Welcome to the Portfolio Management App!")
             if LoginSystem.run_login():
                 self.main_menu()

@@ -17,6 +17,7 @@ class FileManager:
             directory = os.path.dirname(path)
             if directory:
                 os.makedirs(directory, exist_ok=True)
+            return directory
             if self.logger:
                 self.logger.log_info(f"Verified or created directory: {directory}")
         except Exception as e:
@@ -44,7 +45,6 @@ class FileManager:
     def save_json_file(self, file_path, data, overwrite=True):
         """Save data to a JSON file."""
         try:
-            self.ensure_directory_exists(file_path)
 
             if not overwrite and os.path.exists(file_path):
                 if self.logger:
@@ -135,4 +135,66 @@ class FileManager:
         except Exception as e:
             if self.logger:
                 self.logger.log_error(f"Failed to write to file: {file_path}", e)
+            raise
+
+
+    
+    
+    def generate_report(self, portfolio_path, output_file="data/portfolio/reports/portfolio_report.xlsx"):
+        """
+        Generate and save a report from a portfolio JSON file.
+        :param portfolio_path: Path to the portfolio JSON file.
+        :param output_file: Path to save the Excel report.
+        """
+        try:
+            # Ensure the portfolio JSON file exists
+            if not os.path.exists(portfolio_path):
+                self.logger.log_warning(f"No portfolio file found at '{portfolio_path}'. Cannot generate report.")
+                print(f"Warning: No portfolio file found at '{portfolio_path}'. Cannot generate report.")
+                return
+
+            # Load portfolio data
+            portfolio_data = self.load_json_file(portfolio_path)
+            if not portfolio_data:
+                raise ValueError("Portfolio data is empty or file not found.")
+
+            # Generate the report content
+            report_content = []
+            for user_email, stocks in portfolio_data.items():
+                report_content.append(f"Portfolio Report for: {user_email}")
+                report_content.append("=" * 50)
+                for stock in stocks:
+                    ticker = stock.get("ticker")
+                    shares = stock.get("shares")
+                    purchase_price = stock.get("purchase_price")
+                    stock_data = yf.Ticker(ticker)
+
+                    # Fetch current price and dividend yield
+                    current_price = stock_data.info.get("regularMarketPrice", 0)
+                    dividend_yield = stock_data.info.get("dividendYield", 0) * 100 if stock_data.info.get("dividendYield") else 0
+
+                    stock_return = (current_price - purchase_price) * shares
+                    dividend_income = (dividend_yield / 100) * current_price * shares
+
+                    report_content.append(
+                        f"Ticker: {ticker}\n"
+                        f"  Shares: {shares}\n"
+                        f"  Purchase Price: ${purchase_price:.2f}\n"
+                        f"  Current Price: ${current_price:.2f}\n"
+                        f"  Total Return: ${stock_return:.2f}\n"
+                        f"  Dividend Income: ${dividend_income:.2f}\n"
+                    )
+                report_content.append("\n")
+
+            # Write the report to the output file as plain text
+            self.ensure_directory_exists(output_file)
+            with open(output_file, "w") as output:
+                output.write("\n".join(report_content))
+
+            self.logger.log_info(f"Portfolio report generated and saved to '{output_file}'.")
+            print(f"Portfolio report generated and saved to '{output_file}'.")
+
+        except Exception as e:
+            self.logger.log_error(f"Error generating portfolio report: {e}")
+            print(f"Error generating portfolio report: {e}")
             raise

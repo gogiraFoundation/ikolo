@@ -1,0 +1,21 @@
+2025-01-20 00:01:43,414 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 00:01:43,414 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 00:01:43,414 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 00:01:43,414 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 00:02:14,529 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-20 00:07:21,246 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 00:07:21,246 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 00:07:21,246 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 00:07:21,246 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 00:07:43,892 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-20 00:19:37,300 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 00:19:37,316 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 00:19:37,316 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 00:19:37,316 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 00:21:16,163 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-20 00:27:47,958 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 00:27:47,958 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 00:27:47,958 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 00:27:47,958 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 00:28:19,953 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-20 00:29:18,985 - CRITICAL - Unhandled exception occurred

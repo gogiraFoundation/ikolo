@@ -1,0 +1,2 @@
+2025-01-19 21:48:54,876 - ERROR - Error loading portfolio: 'FileManager' object has no attribute 'ensure_directories_exist'
+2025-01-19 21:58:57,297 - ERROR - Error loading portfolio: 'FileManager' object has no attribute 'ensure_directories_exist'

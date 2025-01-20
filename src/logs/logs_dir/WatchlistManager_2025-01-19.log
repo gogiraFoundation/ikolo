@@ -1,0 +1,33 @@
+2025-01-19 20:56:16,424 - INFO - Added 'AAPL' with threshold '202.0' to the watchlist.
+2025-01-19 20:56:16,448 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:45:57,860 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 21:45:57,885 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:48:19,713 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 21:48:19,745 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:03:41,390 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 22:03:41,413 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:10:38,849 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 22:10:38,875 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:18:35,691 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 22:18:35,712 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:22:03,058 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 22:22:03,076 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:27:21,137 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 22:27:21,161 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:31:48,427 - INFO - Added 'AAPL' with threshold '223.0' to the watchlist.
+2025-01-19 22:31:48,447 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:35:34,031 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 22:35:34,053 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 22:38:54,777 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 22:38:54,786 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 23:01:40,898 - INFO - Added 'AAPL' with threshold '220.0' to the watchlist.
+2025-01-19 23:01:40,922 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 23:05:42,209 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 23:05:42,222 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 23:24:37,311 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 23:44:22,291 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 23:44:22,311 - ERROR - Error saving watchlist to file: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 23:53:36,528 - INFO - Added 'AAPL' with threshold '239.0' to the watchlist.
+2025-01-19 23:53:36,535 - ERROR - Error saving watchlist to file: [Errno 13] Permission denied: 'E:\\Users\\gogir\\gogira\\ikolo\\ikolo\\src\\data\\watchlist'
+2025-01-19 23:59:28,558 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-19 23:59:28,566 - ERROR - Error saving watchlist to file: [Errno 13] Permission denied: 'E:\\Users\\gogir\\gogira\\ikolo\\ikolo\\src\\data\\watchlist'

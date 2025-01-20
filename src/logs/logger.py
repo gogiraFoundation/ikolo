@@ -5,7 +5,11 @@ import sys
 
 # Add the `src` directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
-from file_manager.fileManager import FileManager
+
+
+import logging
+import os
+from datetime import datetime
 
 
 class Logger:
@@ -13,39 +17,43 @@ class Logger:
     A logger class that handles all logs for optimal operation.
     """
 
-    def __init__(self, name: str, log_dir: str = "logs/logs_dir/"):
+    def __init__(self, name: str, log_dir: str = "logs/logs_dir/", level: int = logging.INFO):
         """
         Initialize the logger with a specific name and configure logging to console and file.
 
         Args:
             name (str): The name of the logger, typically the module or class name.
             log_dir (str): The directory where log files will be saved.
+            level (int): The logging level (e.g., logging.DEBUG, logging.INFO).
         """
         self.logger = logging.getLogger(name)
-        self.logger.setLevel(logging.INFO)
+        self.logger.setLevel(level)
 
-        # Ensure the log directory exists
-        base_directory = FileManager.ensure_directories_exist(log_dir)
+        # Avoid adding multiple handlers to the same logger
+        if not self.logger.handlers:
+            # Ensure the log directory exists
+            log_dir = os.path.abspath(log_dir)
+            os.makedirs(log_dir, exist_ok=True)
 
-        # Create a log file with a timestamp
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        log_file = os.path.join(base_directory, f"{name}_{timestamp}.log")
+            # Create a log file with a timestamp
+            timestamp = datetime.now().strftime("%Y-%m-%d")
+            log_file = os.path.join(log_dir, f"{name}_{timestamp}.log")
 
-        # Configure console handler
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        console_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-        console_handler.setFormatter(console_formatter)
+            # Configure console handler
+            console_handler = logging.StreamHandler()
+            console_handler.setLevel(level)
+            console_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+            console_handler.setFormatter(console_formatter)
 
-        # Configure file handler
-        file_handler = logging.FileHandler(log_file, mode="a")
-        file_handler.setLevel(logging.INFO)
-        file_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-        file_handler.setFormatter(file_formatter)
+            # Configure file handler
+            file_handler = logging.FileHandler(log_file, mode="a")
+            file_handler.setLevel(level)
+            file_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+            file_handler.setFormatter(file_formatter)
 
-        # Add handlers to the logger
-        self.logger.addHandler(console_handler)
-        self.logger.addHandler(file_handler)
+            # Add handlers to the logger
+            self.logger.addHandler(console_handler)
+            self.logger.addHandler(file_handler)
 
     def log_info(self, message: str):
         """

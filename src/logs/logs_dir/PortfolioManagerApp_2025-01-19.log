@@ -1,0 +1,88 @@
+2025-01-19 20:51:45,848 - INFO - Required directories verified or created.
+2025-01-19 20:53:07,377 - INFO - Starting stock analysis...
+2025-01-19 20:53:14,804 - INFO - Analyzing stock: AAPL
+2025-01-19 20:54:58,423 - INFO - Stock analysis completed successfully.
+2025-01-19 20:56:16,451 - INFO - Added AAPL to watchlist with threshold 202.0
+2025-01-19 21:16:18,911 - WARNING - Invalid menu choice: C:/Users/gogir/AppData/Local/Microsoft/WindowsApps/python3.11.exe e:/Users/gogir/gogira/ikolo/ikolo/src/sessionManager/session_manager.py
+2025-01-19 21:16:18,934 - WARNING - Invalid choice entered: None
+2025-01-19 21:18:52,940 - ERROR - Error ensuring directories exist: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:18:52,947 - CRITICAL - Unhandled exception occurred
+2025-01-19 21:29:03,182 - ERROR - Error ensuring directories exist: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:29:03,190 - CRITICAL - Unhandled exception occurred
+2025-01-19 21:29:59,236 - ERROR - Error ensuring directories exist: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:29:59,241 - CRITICAL - Unhandled exception occurred
+2025-01-19 21:33:27,631 - ERROR - Error ensuring directories exist: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:33:27,631 - CRITICAL - Unhandled exception occurred
+2025-01-19 21:37:10,960 - ERROR - Error ensuring directories exist: expected str, bytes or os.PathLike object, not NoneType
+2025-01-19 21:37:10,960 - CRITICAL - Unhandled exception occurred
+2025-01-19 21:44:23,232 - INFO - Required directories verified or created.
+2025-01-19 21:45:57,885 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 21:48:19,751 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:01:26,980 - INFO - Required directories verified or created.
+2025-01-19 22:01:52,981 - INFO - Required directories verified or created.
+2025-01-19 22:03:41,414 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:09:53,440 - INFO - Verified or created data directory: ./data
+2025-01-19 22:09:53,459 - INFO - Required directories verified or created.
+2025-01-19 22:10:38,883 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:15:27,581 - INFO - Verified or created data directory: data
+2025-01-19 22:15:27,583 - ERROR - Error ensuring directories exist: name 'data_directory' is not defined
+2025-01-19 22:15:27,583 - CRITICAL - Unhandled exception occurred
+2025-01-19 22:16:43,514 - INFO - Verified or created data directory: data
+2025-01-19 22:16:43,514 - ERROR - Error ensuring directories exist: name 'watchlist_file' is not defined
+2025-01-19 22:16:43,514 - CRITICAL - Unhandled exception occurred
+2025-01-19 22:17:55,469 - INFO - Verified or created data directory: data
+2025-01-19 22:17:55,469 - INFO - Required directories verified or created.
+2025-01-19 22:18:35,716 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:21:38,828 - INFO - Verified or created data directory: data
+2025-01-19 22:21:38,828 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:21:38,828 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:21:38,828 - INFO - Required directories verified or created.
+2025-01-19 22:22:03,084 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:26:34,619 - INFO - Verified or created data directory: data
+2025-01-19 22:26:34,619 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:26:34,619 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:26:34,619 - INFO - Required directories verified or created.
+2025-01-19 22:27:21,165 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 22:31:20,271 - INFO - Verified or created data directory: data
+2025-01-19 22:31:20,271 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:31:20,271 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:31:20,271 - INFO - Required directories verified or created.
+2025-01-19 22:31:48,451 - INFO - Added AAPL to watchlist with threshold 223.0
+2025-01-19 22:35:01,412 - INFO - Verified or created data directory: data
+2025-01-19 22:35:01,412 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:35:01,412 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:35:01,412 - INFO - Required directories verified or created.
+2025-01-19 22:35:34,055 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-19 22:38:19,715 - INFO - Verified or created data directory: data
+2025-01-19 22:38:19,715 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:38:19,715 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:38:19,733 - INFO - Required directories verified or created.
+2025-01-19 22:38:54,792 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-19 22:59:51,256 - INFO - Verified or created data directory: data
+2025-01-19 22:59:51,256 - INFO - Watchlist file path: data\watchlist\watchlist.json
+2025-01-19 22:59:51,264 - INFO - Portfolio file path: data\portfolio\portfolio.json
+2025-01-19 22:59:51,264 - INFO - Required directories and files verified or created.
+2025-01-19 23:01:40,924 - INFO - Added AAPL to watchlist with threshold 220.0
+2025-01-19 23:05:18,654 - INFO - Verified or created data directory: data
+2025-01-19 23:05:18,654 - INFO - Watchlist file path: data\watchlist/watchlist.json
+2025-01-19 23:05:18,654 - INFO - Portfolio file path: data\portfolio/portfolio.json
+2025-01-19 23:05:18,654 - INFO - Required directories and files verified or created.
+2025-01-19 23:05:42,230 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-19 23:16:56,714 - CRITICAL - Unhandled exception occurred
+2025-01-19 23:22:10,819 - CRITICAL - Unhandled exception occurred
+2025-01-19 23:24:37,311 - CRITICAL - Unhandled exception occurred
+2025-01-19 23:43:35,481 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-19 23:43:35,481 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-19 23:43:35,481 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-19 23:43:35,481 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-19 23:44:22,319 - INFO - Added AAPL to watchlist with threshold 230.0
+2025-01-19 23:52:59,193 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-19 23:52:59,193 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-19 23:52:59,193 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-19 23:52:59,193 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-19 23:53:36,535 - INFO - Added AAPL to watchlist with threshold 239.0
+2025-01-19 23:59:02,798 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-19 23:59:02,798 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-19 23:59:02,798 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-19 23:59:02,798 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-19 23:59:28,566 - INFO - Added AAPL to watchlist with threshold 230.0

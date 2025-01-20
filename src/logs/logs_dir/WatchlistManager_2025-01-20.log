@@ -1,0 +1,8 @@
+2025-01-20 00:02:14,513 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-20 00:02:14,522 - ERROR - Error saving watchlist to file: [Errno 13] Permission denied: 'E:\\Users\\gogir\\gogira\\ikolo\\ikolo\\src\\data\\watchlist'
+2025-01-20 00:07:43,884 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-20 00:07:43,892 - ERROR - Error saving watchlist to file: [Errno 13] Permission denied: 'E:\\Users\\gogir\\gogira\\ikolo\\ikolo\\src\\data\\watchlist'
+2025-01-20 00:21:16,152 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-20 00:21:16,152 - ERROR - Error saving watchlist to file: [Errno 13] Permission denied: 'E:\\Users\\gogir\\gogira\\ikolo\\ikolo\\src\\data\\watchlist'
+2025-01-20 00:28:19,946 - INFO - Added 'AAPL' with threshold '230.0' to the watchlist.
+2025-01-20 00:28:19,953 - INFO - Watchlist saved to 'E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist\watchlist.json'.
