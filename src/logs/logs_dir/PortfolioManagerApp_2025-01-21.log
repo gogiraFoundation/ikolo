@@ -6,3 +6,4 @@
 2025-01-21 12:30:40,875 - CRITICAL - Unhandled exception occurred
 2025-01-21 12:37:04,314 - INFO - Configuration loaded: {'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio', 'module_directory': 'src/'}
 2025-01-21 12:47:19,525 - INFO - Configuration loaded: {'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio', 'module_directory': 'src/'}
+2025-01-21 14:34:56,491 - INFO - Configuration loaded: {'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio', 'module_directory': 'src/'}

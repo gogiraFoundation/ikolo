@@ -1,7 +1,11 @@
 
-
 import os
 import json
+import sys
+
+# Add the `src` directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
 from portfolio_manager.visualizer import Visualizer
 from portfolio_manager.metrics_calculator import MetricsCalculator
 from portfolio_manager.data_fetcher import DataFetcher
@@ -264,7 +268,7 @@ class PortfolioManagerApp:
     def run(self):
         """Run the application."""
         try:
-            UserInteractionHandler.display_message("Welcome to the Portfolio Management App!")
+            UserInteractionHandler.display_message("\nWelcome to the Portfolio Management App!")
             if LoginSystem.run_login():
                 self.main_menu()
             else:
