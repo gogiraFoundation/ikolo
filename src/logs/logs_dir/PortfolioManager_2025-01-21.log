@@ -1,0 +1,11 @@
+2025-01-21 12:38:41,382 - ERROR - Error loading portfolio: name 'full_path' is not defined
+2025-01-21 12:42:47,728 - ERROR - Error loading portfolio: name 'full_path' is not defined
+2025-01-21 12:42:54,130 - ERROR - Error loading portfolio: name 'full_path' is not defined
+2025-01-21 12:43:21,052 - INFO - Added 2000.0 shares of 'MSFT' at $150.00 to gogirafoundation@gmail.com's portfolio.
+2025-01-21 12:44:23,804 - INFO - Added 200.0 shares of 'ASFT' at $1000.00 to dud@gmail.com's portfolio.
+2025-01-21 12:44:29,697 - ERROR - Error loading portfolio: name 'full_path' is not defined
+2025-01-21 12:48:26,640 - ERROR - Error loading portfolio: Expecting value: line 1 column 1 (char 0)
+2025-01-21 12:49:26,607 - INFO - Added 2000.0 shares of 'MSFT' at $150.00 to gogirafoundation@gmail.com's portfolio.
+2025-01-21 12:49:31,104 - INFO - Portfolio saved to 'E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio\portfolio.json'.
+2025-01-21 12:49:47,519 - INFO - Portfolio loaded from 'E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio\portfolio.json'.
+2025-01-21 12:50:44,704 - INFO - Portfolio loaded from 'E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio\portfolio.json'.

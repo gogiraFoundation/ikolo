@@ -19,3 +19,24 @@
 2025-01-20 00:27:47,958 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
 2025-01-20 00:28:19,953 - INFO - Added AAPL to watchlist with threshold 230.0
 2025-01-20 00:29:18,985 - CRITICAL - Unhandled exception occurred
+2025-01-20 13:09:28,531 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 13:09:28,531 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 13:09:28,539 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 13:09:28,539 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 13:15:31,541 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 13:15:31,541 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 13:15:31,541 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 13:15:31,541 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 13:18:24,638 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 13:18:24,638 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 13:18:24,638 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 13:18:24,638 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 13:18:46,823 - INFO - Starting stock analysis...
+2025-01-20 13:18:52,669 - INFO - Analyzing stock: AAPL
+2025-01-20 13:19:07,855 - ERROR - Error during stock analysis for ticker AAPL: [Errno 2] No such file or directory: 'data/sys_file/cache_dir/AAPL_2009-11-01_2025-01-20.pkl'
+2025-01-20 13:19:07,857 - CRITICAL - Unhandled exception occurred
+2025-01-20 13:28:50,453 - INFO - Configuration loaded: default_tickers=['AAPL', 'MSFT', 'GOOGL']
+2025-01-20 13:28:50,453 - INFO - Data directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data
+2025-01-20 13:28:50,453 - INFO - Watchlist directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\watchlist
+2025-01-20 13:28:50,453 - INFO - Portfolio directory: E:\Users\gogir\gogira\ikolo\ikolo\src\data\portfolio
+2025-01-20 13:30:17,594 - INFO - Added MSFT to watchlist with threshold 150.0

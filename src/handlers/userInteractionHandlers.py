@@ -33,3 +33,13 @@ class UserInteractionHandler:
         except ValueError:
             return None, None
 
+    
+    @staticmethod
+    def _get_numeric_input(prompt):
+        while True:
+            try:
+                return float(UserInteractionHandler.get_user_input(prompt))
+            except ValueError:
+                UserInteractionHandler.display_message("Invalid input. Please enter a numeric value.")
+
+

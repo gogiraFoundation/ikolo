@@ -13,7 +13,7 @@ if __name__ == "__main__":
         logger.log_info("Starting PortfolioManagerApp...")  # Log info message before running the app
         
         app = PortfolioManagerApp()
-        app.run()  # Assuming run() starts the application logic
+        app.run()
 
     except Exception as e:
         logger.log_error(f"An error occurred while running the Portfolio Manager App: {e}")  # Log the error

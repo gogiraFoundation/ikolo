@@ -41,29 +41,32 @@ class DataFetcher:
         Returns:
             pd.DataFrame: DataFrame containing stock price data.
         """
-        # Generate cache file path
-        cache_file = os.path.join(self.cache_dir, f"{ticker}_{start_date}_{end_date}.pkl")
-
-        # Check if data is already cached
-        if self.file_manager.ensure_directory_exists(cache_file):
-            cached_data = pd.read_pickle(cache_file)
-            print(f"Cache hit: Loaded data for {ticker} from {cache_file}")
-            return cached_data
-
-        # If data is not cached, fetch from Yahoo Finance
         try:
-            print(f"Cache miss: Fetching data for {ticker} from Yahoo Finance...")
-            stock = yf.Ticker(ticker)
-            data = stock.history(start=start_date, end=end_date)
+            # Generate cache file path
+            cache_file = os.path.join(self.cache_dir, f"{ticker}_{start_date}_{end_date}.pkl")
 
-            # Rate limiting logic
-            time.sleep(self.RATE_LIMIT_TIME / self.MAX_REQUESTS)
+            # Check if data is already cached
+            if self.file_manager.ensure_directory_exists(cache_file):
+                cached_data = pd.read_pickle(cache_file)
+                print(f"Cache hit: Loaded data for {ticker} from {cache_file}")
+                return cached_data
+            else:
+                # If data is not cached, fetch from Yahoo Finance
+                try:
+                    print(f"Cache miss: Fetching data for {ticker} from Yahoo Finance...")
+                    stock = yf.Ticker(ticker)
+                    data = stock.history(start=start_date, end=end_date)
 
-            # Save data to cache
-            pd.to_pickle(data, cache_file)
-            print(f"Data for {ticker} cached at {cache_file}")
-            return data.reset_index()  # Return the fetched data
+                    # Rate limiting logic
+                    time.sleep(self.RATE_LIMIT_TIME / self.MAX_REQUESTS)
 
+                    # Save data to cache
+                    pd.to_pickle(data, cache_file)
+                    print(f"Data for {ticker} cached at {cache_file}")
+                    return data.reset_index()  # Return the fetched data
+
+                except Exception as e:
+                    print(f"Error: {e}")
+                    return pd.DataFrame()  # Return an empty DataFrame in case of failure
         except Exception as e:
-            print(f"Error: {e}")
-            return pd.DataFrame()  # Return an empty DataFrame in case of failure
+            print(f"Error fetching Data: {e}")

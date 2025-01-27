@@ -98,7 +98,7 @@ class WatchlistManager:
 
     def load_from_file(self, file_path):
         try:
-            full_path = self._file_manager_.ensure_directory_exists(file_path)
+            full_path = file_path
             with open(full_path, 'r') as f:
                 self.watchlist = [
                     {'ticker': line.split(',')[0], 'threshold': float(line.split(',')[1].strip())}
@@ -207,7 +207,7 @@ class PortfolioManager:
 
     def save_to_file(self, file_path):
         try:
-            full_path = self._file_manager_.ensure_directory_exists(file_path)
+            full_path = file_path
             with open(full_path, 'w') as f:
                 json.dump(self.portfolio, f)
             self.logger.log_info(f"Portfolio saved to '{full_path}'.")
@@ -216,7 +216,7 @@ class PortfolioManager:
 
     def load_from_file(self, file_path):
         try:
-            full_path = self._file_manager_.ensure_directory_exists(file_path)
+            full_path = file_path
             if os.path.exists(full_path):
                 with open(full_path, 'r') as f:
                     self.portfolio = json.load(f)
@@ -224,9 +224,12 @@ class PortfolioManager:
             else:
                 self.logger.log_warning(f"No portfolio file found at '{full_path}'. Starting with an empty portfolio.")
                 self.portfolio = {}
+        except json.JSONDecodeError as e:
+            self.logger.log_error(f"Portfolio file '{full_path}' is corrupted or improperly formatted: {e}")
+            self.portfolio = {}
         except Exception as e:
             self.logger.log_error(f"Error loading portfolio: {e}")
-
+            self.portfolio = {}
     
     def portfolio_report_generator(self, file_path, output_file):
         """
@@ -236,8 +239,7 @@ class PortfolioManager:
         """
         try:
             # Ensure the directory and file exist
-            full_path = self._file_manager_.ensure_directory_exists(file_path)
-
+            full_path = file_path
             # Check if the file exists before attempting report generation
             if not os.path.exists(full_path):
                 self.logger.log_warning(f"Portfolio file '{full_path}' does not exist. Cannot generate report.")

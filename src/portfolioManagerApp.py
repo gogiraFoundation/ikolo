@@ -8,9 +8,10 @@ from portfolio_manager.data_fetcher import DataFetcher
 from portfolio_manager.technical_analysis import TechnicalAnalysis
 from portfolio_manager.fundamental_analysis import FundamentalAnalysis
 from portfolio_manager.advisor import Advisor
+from portfolio_manager.portfolio_operations import PortfolioOperations
 from portfolio_manager.searchStocks import StockSearcher
 from portfolio_manager.tracker import Tracker
-from handlers.handlers import WatchlistManager, PortfolioManager
+from handlers.handlers import WatchlistManager
 from handlers.utilityHandler import UtilityHandler
 from handlers.userInteractionHandlers import UserInteractionHandler
 from sessionManager.session_manager import SessionManager
@@ -43,46 +44,44 @@ class PortfolioManagerApp:
         self.fundamental_analysis = FundamentalAnalysis()
         self.advisor = Advisor()
         self.watchlist_manager = WatchlistManager()
-        self.portfolio_manager = PortfolioManager()
+        #self.portfolio_manager = PortfolioManager()
+        self.portfolio_operations = PortfolioOperations(portfolio_file=self.portfolio_file)
+
 
     def _load_configuration(self):
-        """Load application configuration from a file."""
-        config_path = os.path.join(os.getcwd(), "config.json")
-        config = self.file_manager.load_json_file(config_path)
+        try:
+            
+            """Load application configuration from a file, or create defaults."""
+            config_path = os.path.join(os.getcwd(), "config.json")
+            
+            if not os.path.exists(config_path):
+                self.logger.log_warning("Config file not found. Creating default config...")
+                default_config = {
+                    "default_tickers": ["AAPL", "MSFT", "GOOGL"],
+                    "data_directory": "./data",
+                    "watchlist_subdir": "watchlist",
+                    "portfolio_subdir": "portfolio"
+                }
+                self.file_manager.save_json_file(config_path, default_config)
 
-        if config:
             # Load settings from config
+            config = self.file_manager.load_json_file(config_path)
             self.default_tickers = config.get("default_tickers", ["AAPL", "MSFT", "GOOGL"])
-            self.data_directory = os.path.abspath(config.get("data_directory", os.path.join(os.getcwd(), "data")))
+            self.data_directory = os.path.abspath(config.get("data_directory", "./data"))
             self.watchlist_dir = os.path.join(self.data_directory, config.get("watchlist_subdir", "watchlist"))
             self.portfolio_dir = os.path.join(self.data_directory, config.get("portfolio_subdir", "portfolio"))
-        else:
-            # Use default settings if config file is missing
-            self.logger.log_warning("Config file not found. Using default settings.")
-            self.default_tickers = ["AAPL", "MSFT", "GOOGL"]
-            self.data_directory = os.path.abspath(os.path.join(os.getcwd(), "data"))
-            self.watchlist_dir = os.path.join(self.data_directory, "watchlist")
-            self.portfolio_dir = os.path.join(self.data_directory, "portfolio")
-
-        # Ensure data_directory is a valid path
-        if not self.data_directory:
-            self.logger.log_error("Data directory path is not valid.")
-            raise ValueError("Data directory path is not valid.")
-
-
-        # Ensure the PORTFOLIO directory exists
-        self.file_manager.ensure_directory_exists(self.portfolio_dir)
         
-        # Construct the correct portfolio file path
-        self.portfolio_file = os.path.join(self.portfolio_dir, "portfolio.json")
-        print(f"Portfolio file path: {self.portfolio_file}")
+            os.makedirs(self.data_directory, exist_ok=True)
+            os.makedirs(self.watchlist_dir, exist_ok=True)
+            os.makedirs(self.portfolio_dir, exist_ok=True)
 
-
-        # Log configuration for debugging
-        self.logger.log_info(f"Configuration loaded: default_tickers={self.default_tickers}")
-        self.logger.log_info(f"Data directory: {self.data_directory}")
-        self.logger.log_info(f"Watchlist directory: {self.watchlist_dir}")
-        self.logger.log_info(f"Portfolio directory: {self.portfolio_dir}")
+            self.portfolio_file = os.path.join(self.portfolio_dir, "portfolio.json")
+            self.watchlist_file = os.path.join(self.watchlist_dir, "watchlist.json")
+            self.logger.log_info(f"Configuration loaded: {config}")
+           
+        
+        except Exception as e:
+            print(f"Operation Failed: {e}")
 
 
     def perform_analysis(self):
@@ -189,42 +188,16 @@ class PortfolioManagerApp:
         except Exception as e:
             UserInteractionHandler.display_message("An error occurred while tracking the stock.")
             self.logger.log_error(f"Unexpected error while tracking stock: {str(e)}")
+    
 
 
-
-    def portfolio_operations(self):
-        """Perform portfolio operations."""
-        
-        actions = {
-            "1": self._view_portfolio,
-            "2": self.track_stocks,
-            "3": self._save_portfolio,
-            "4": self._exit_operations
-        }
-
-        while True:
-            UserInteractionHandler.display_message("\n=== Portfolio Operations ===")
-            UserInteractionHandler.display_message("1. View Portfolio\n2. Add to Portfolio\n3. Save Portfolio\n4. Exit")
-            choice = UserInteractionHandler.get_user_input("Enter your choice: ")
-
-            action = actions.get(choice, self._invalid_choice)
-            if action == self._exit_operations:
-                break
-            action()
-
-    def _view_portfolio(self):
-        """View the portfolio."""
-        
-        self.portfolio_manager.load_from_file(self.portfolio_file)
-
-    def _save_portfolio(self):
-        """Save the portfolio."""
-        self.portfolio_manager.save_to_file(self.portfolio_file)
-
-    def _exit_operations(self):
-        """Exit portfolio operations."""
-        UserInteractionHandler.display_message("Exiting portfolio operations.")
-
+    def portfolio_actions(self):
+        try:
+            app = self.portfolio_operations._portfolio_operations_run()
+        except Exception as e:
+            UserInteractionHandler.display_message("An error occurred while tracking the stock.")
+            self.logger.log_error(f"Unexpected error while Dispaying Portfolio: {str(e)}")
+    
 
     def _invalid_choice(self):
         """Handle invalid menu choices."""
@@ -241,14 +214,14 @@ class PortfolioManagerApp:
             self.logger.log_warning("No tickers provided for search.")
             return
         self.search_stocks(tickers)
-
+    
 
     def get_actions(self):
         return {
             "1": {"description": "Perform Analysis", "action": self.perform_analysis},
             "2": {"description": "Track Stocks", "action": self.track_stocks},
             "3": {"description": "Search Stocks", "action": self._prompt_and_search_stocks},
-            "4": {"description": "Portfolio Operations", "action": self.portfolio_operations},
+            "4": {"description": "Portfolio Operations", "action": self.portfolio_actions},
             "5": {"description": "Exit", "action": self._exit_application},
         }
 
