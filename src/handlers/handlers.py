@@ -52,8 +52,8 @@ class WatchlistManager:
     """
     Class for managing stock watchlists.
     """
-    def __init__(self):
-        self._file_manager_ = FileManager()
+    def __init__(self, base_dir):
+        self._file_manager_ = FileManager(base_dir=base_dir)
         self.logger = Logger(name="WatchlistManager")
         self.watchlist = []
 
@@ -125,8 +125,8 @@ class PortfolioManager:
     """
     Class for managing stock portfolios.
     """
-    def __init__(self):
-        self._file_manager_ = FileManager()
+    def __init__(self, base_dir):
+        self._file_manager_ = FileManager(base_dir=base_dir)
         self.logger = Logger(name="PortfolioManager")
         self.portfolio = {}
 

@@ -1,0 +1,6 @@
+2025-01-28 16:04:46,140 - ERROR - Error in perform_stock_analysis: 'PortfolioManagerApp' object has no attribute 'analyze_stock'
+2025-01-28 16:05:17,313 - ERROR - Error in perform_stock_analysis: 'PortfolioManagerApp' object has no attribute 'analyze_stock'
+2025-01-28 16:14:33,105 - ERROR - Error in perform_stock_analysis: PortfolioManagerApp.perform_analysis() takes 1 positional argument but 4 were given
+2025-01-28 17:00:24,477 - ERROR - Error in perform_stock_analysis: 'NoneType' object has no attribute 'empty'
+2025-01-28 21:54:28,550 - ERROR - Error in perform_stock_analysis: PortfolioManagerApp.perform_analysis() missing 3 required positional arguments: 'ticker', 'start_date', and 'end_date'
+2025-01-28 21:54:57,308 - ERROR - Error in perform_stock_analysis: PortfolioManagerApp.perform_analysis() missing 3 required positional arguments: 'ticker', 'start_date', and 'end_date'

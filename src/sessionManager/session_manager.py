@@ -5,9 +5,9 @@ from file_manager.fileManager import FileManager
 class SessionManager:
     """Class to manage user sessions."""
     
-    def __init__(self, db_path: str = "data/sys_file/session_dir/sessions.db"):
+    def __init__(self, base_dir:str, db_path: str = "data/sys_file/session_dir/sessions.db"):
         self.db_path = db_path
-        self.file_manager = FileManager()
+        self.file_manager = FileManager(base_dir=base_dir)
         self.connection = None
         self._initialize_database()
     

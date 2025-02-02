@@ -1,0 +1,8 @@
+2025-01-31 18:56:54,755 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 18:57:07,310 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 22:48:15,514 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 22:48:22,988 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 22:53:18,402 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 23:13:46,200 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 23:13:55,529 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-31 23:15:01,861 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Track Stocks
+{% endblock %}
+
+{% block content %}
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Track Stock</h2>
+        <form action="{{ url_for('stock_tracking_form') }}" method="POST">
+            <div class="form-group">
+                <label for="trackingTicker">Stock Ticker</label>
+                <input type="text" class="form-control" id="trackingTicker" name="trackingTicker" placeholder="Enter Stock Ticker" required>
+            </div>
+            <div class="form-group">
+                <label for="threshold">Threshold</label>
+                <input type="number" class="form-control" id="threshold" name="threshold" placeholder="Enter Price Threshold" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Track Stock</button>
+        </form>
+    </div>
+
+    {% if data %}
+        <div class="container mt-5">
+            <h3 class="text-center">Tracking Results</h3>
+            <p>Stock Ticker: {{ data.ticker }}</p>
+            <p>Threshold: {{ data.threshold }}</p>
+            <p>Message: {{ data.message }}</p>
+        </div>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+{% endblock %}

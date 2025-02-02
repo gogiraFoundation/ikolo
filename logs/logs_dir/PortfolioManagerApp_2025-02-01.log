@@ -1,0 +1,14 @@
+2025-02-01 19:16:41,218 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:16:52,275 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:21:28,935 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:21:37,187 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:22:16,512 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:23:04,640 - INFO - Starting stock analysis for AAPL...
+2025-02-01 19:23:38,426 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:45:45,205 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:46:07,301 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:46:47,275 - INFO - Starting stock analysis for AAPL...
+2025-02-01 19:47:17,518 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-02-01 19:57:02,712 - INFO - Starting stock analysis for AAPL...
+2025-02-01 19:57:39,489 - INFO - Starting stock analysis for AAPL...
+2025-02-01 20:05:22,224 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}

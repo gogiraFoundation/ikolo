@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Stock Analysis Results
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-primary">Stock Analysis Results</h1>
+
+    {% if data %}
+   
+
+        <p><strong>Ticker:</strong>{{ data.get('ticker', 'N/A') }}</p>
+        <p><strong>Start Date:</strong> {{ data.get('start_date', 'N/A') }}</p>
+        <p><strong>End Date:</strong> {{ data.get('end_date', 'N/A') }}</p>
+        <p><strong>Analysis Result:</strong> {{ data.get('analysis_result', 'No analysis available') }}</p>
+    {% else %}
+        <p class="text-danger">No data available. Please try again.</p>
+    {% endif %}
+
+    <a href="/" class="btn btn-primary mt-4">Go back to the homepage</a>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section container-fluid text-center py-5 bg-primary text-white">
+        <div class="container">
+            <h1 class="display-4">Welcome to the Portfolio Management App</h1>
+            <p class="lead">Your one-stop solution for stock analysis, tracking, and portfolio management.</p>
+            <a href="#services" class="btn btn-light btn-lg mt-3">Explore Our Features</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="services" class="container my-5">
+        <h2 class="text-center mb-4">Features</h2>
+        <div class="row g-4">
+            <!-- Stock Analysis Feature -->
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3">
+                    <h5 class="card-title">Stock Analysis</h5>
+                    <p class="card-text">Perform technical and fundamental analysis of stocks.</p>
+                    <a href="{{ url_for('perform_analysis') }}" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+            
+            <!-- Stock Tracking Feature -->
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3">
+                    <h5 class="card-title">Track Stocks</h5>
+                    <p class="card-text">Track your favorite stocks and set custom price alerts.</p>
+                    <a href="{{ url_for('track_stock_form') }}" class="btn btn-primary">Track Stocks</a>
+                </div>
+            </div>
+
+            <!-- Stock Search Feature -->
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center p-3">
+                    <h5 class="card-title">Search Stocks</h5>
+                    <p class="card-text">Search for stock metadata and market information.</p>
+                    <a href="{{ url_for('search_stock_form') }}" class="btn btn-primary">Search Stocks</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container my-5">
+        <h2 class="text-center mb-4">My Portfolio</h2>
+        <div class="row g-4">
+            <!-- Portfolio Overview -->
+            <div class="col-md-6">
+                <div class="card shadow-sm text-center p-3">
+                    <h5 class="card-title">Portfolio Overview</h5>
+                    <p class="card-text">Get a snapshot of your portfolio performance and holdings.</p>
+                    <a href="{{ url_for('portfolio_operations_page') }}" class="btn btn-primary">View Portfolio</a>
+                </div>
+            </div>
+
+            <!-- Portfolio Performance -->
+            <div class="col-md-6">
+                <div class="card shadow-sm text-center p-3">
+                    <h5 class="card-title">Portfolio Performance</h5>
+                    <p class="card-text">Track the performance of your investments over time.</p>
+                    <a href="{{ url_for('portfolio_operations_page') }}" class="btn btn-primary">View Performance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

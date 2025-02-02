@@ -11,8 +11,8 @@ from handlers.handlers import PortfolioManager
 class PortfolioOperations:
     """Handle Logic that has to do with Portfolio Operations"""
     
-    def __init__(self, portfolio_file):
-        self.portfolio_manager = PortfolioManager()
+    def __init__(self, base_dir, portfolio_file):
+        self.portfolio_manager = PortfolioManager(base_dir=base_dir)
         self.portfolio_file = portfolio_file  # Define portfolio file path
     
     

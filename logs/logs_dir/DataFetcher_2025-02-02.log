@@ -1,0 +1,39 @@
+2025-02-02 04:43:01,927 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 04:43:49,266 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 05:05:11,229 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2021-01-01_2025-01-01.pkl
+2025-02-02 05:20:13,702 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2021-01-01_2025-01-01.pkl
+2025-02-02 05:20:47,798 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2021-01-01_2025-01-01.pkl
+2025-02-02 05:36:14,193 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2021-01-01_2025-01-01.pkl
+2025-02-02 09:18:21,852 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2021-01-01_2025-01-01.pkl
+2025-02-02 09:19:19,697 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:37:25,932 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:37:27,748 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:39:02,890 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:39:05,139 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:55:55,748 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:55:57,762 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:57:50,663 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 09:57:52,766 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 10:07:55,657 - INFO - Cache miss: Fetching data for AAPL from Yahoo Finance...
+2025-02-02 10:07:57,406 - INFO - Cache miss: Fetching data for AAPL from Yahoo Finance...
+2025-02-02 10:07:58,826 - INFO - Data for AAPL cached at data/sys_file/cache_dir/AAPL_2020-01-01_2024-01-01.pkl
+2025-02-02 10:07:58,827 - INFO - Data for AAPL cached at data/sys_file/cache_dir/AAPL_2020-01-01_2024-01-01.pkl
+2025-02-02 13:16:47,159 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:32:20,191 - INFO - Cache miss: Fetching data for AAPL from Yahoo Finance...
+2025-02-02 14:32:22,673 - INFO - Cache miss: Fetching data for AAPL from Yahoo Finance...
+2025-02-02 14:32:25,814 - INFO - Data for AAPL cached at data/sys_file/cache_dir/AAPL_2020-10-01_2025-01-01.pkl
+2025-02-02 14:32:25,830 - INFO - Data for AAPL cached at data/sys_file/cache_dir/AAPL_2020-10-01_2025-01-01.pkl
+2025-02-02 14:50:20,663 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:50:20,726 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:52:59,986 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:52:59,986 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:55:39,213 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 14:55:39,213 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 15:06:23,296 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 15:06:23,280 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 15:09:57,703 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 15:09:57,703 - INFO - Cache hit: Loaded data for AAPL from data/sys_file/cache_dir/AAPL_2020-01-01_2025-01-01.pkl
+2025-02-02 15:16:51,896 - INFO - Cache miss: Fetching data for MSFT from Yahoo Finance...
+2025-02-02 15:16:51,911 - INFO - Cache miss: Fetching data for MSFT from Yahoo Finance...
+2025-02-02 15:16:54,942 - INFO - Data for MSFT cached at data/sys_file/cache_dir/MSFT_2020-01-01_2025-01-01.pkl
+2025-02-02 15:16:54,942 - INFO - Data for MSFT cached at data/sys_file/cache_dir/MSFT_2020-01-01_2025-01-01.pkl

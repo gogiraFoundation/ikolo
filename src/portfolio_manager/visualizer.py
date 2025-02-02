@@ -10,7 +10,7 @@ import sys
 class Visualizer:
     """Class for visualizing stock data."""
 
-    def __init__(self, save_dir: str = "data/plots/"):
+    def __init__(self, base_dir: str, save_dir: str = "data/plots/"):
         """
         Initialize the Visualizer with a save directory for plots.
 
@@ -18,7 +18,7 @@ class Visualizer:
             save_dir (str): Directory to save plot files.
         """
         self.save_dir = save_dir
-        self.file_manager = FileManager()
+        self.file_manager = FileManager(base_dir=base_dir)
         self.file_manager.ensure_directory_exists(self.save_dir)
 
     def _save_plot(self, save_path: str) -> str:

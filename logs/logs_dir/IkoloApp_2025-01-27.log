@@ -1,0 +1,18 @@
+2025-01-27 13:22:17,896 - INFO - Starting PortfolioManagerApp...
+2025-01-27 13:22:17,896 - ERROR - An error occurred while running the Portfolio Manager App: name 'logger' is not defined
+Traceback (most recent call last):
+  File "e:\Users\gogir\gogira\ikolo\ikolo\ap.py", line 27, in run
+    logger.log_info("Application is running...")
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\Users\gogir\gogira\ikolo\ikolo\ap.py", line 36, in entryPoint
+    run()
+  File "e:\Users\gogir\gogira\ikolo\ikolo\ap.py", line 30, in run
+    logger.log_info("Application shutdown complete.")
+    ^^^^^^
+NameError: name 'logger' is not defined
+

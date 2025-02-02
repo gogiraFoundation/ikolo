@@ -15,11 +15,12 @@ class CacheData:
 
     CACHE_EXPIRATION_TIME = timedelta(hours=24)  # Cache expiration time (24 hours by default)
 
-    def __init__(self, ticker: str, start_date: str, end_date: str, cache_dir: str = "data/sys_file/cache_dir"):
+    def __init__(self, ticker: str, start_date: str, end_date: str, cache_dir: str = "data/sys_file/cache_dir", cache_expiration: timedelta = None):
         self.ticker = ticker
         self.start_date = start_date
         self.end_date = end_date
         self.cache_dir = cache_dir
+        self.cache_expiration = cache_expiration if cache_expiration else self.CACHE_EXPIRATION_TIME
         self.file_manager = FileManager()
         self.logger = Logger("CacheData")
 
@@ -33,6 +34,7 @@ class CacheData:
             self.logger.log_info(f"Cache directory ensured: {self.cache_dir}")
         except Exception as e:
             self.logger.log_error(f"Error ensuring cache directory exists: {e}")
+            raise
 
     def _get_cache_filename(self) -> str:
         """Generate a unique cache filename based on the ticker and dates."""
@@ -47,7 +49,11 @@ class CacheData:
                 with open(cache_filename, "rb") as f:
                     cache_data = pickle.load(f)
                     cache_timestamp = cache_data.get('timestamp')
-                    if cache_timestamp and datetime.now() - cache_timestamp < self.CACHE_EXPIRATION_TIME:
+                    if cache_timestamp and datetime.now() - cache_timestamp < self.cache_expiration:
+                        if cache_data['data'].empty:
+                            self.logger.log_warning(f"Cache for {cache_filename} is empty. Fetching new data.")
+                            self.file_manager.delete_file(cache_filename)
+                            return None
                         self.logger.log_info(f"Cache hit for {cache_filename}. Data is valid.")
                         return cache_data['data']
                     else:
@@ -57,6 +63,7 @@ class CacheData:
                 self.logger.log_error(f"Error loading cache file {cache_filename}: {pickling_error}")
             except Exception as e:
                 self.logger.log_error(f"Unexpected error loading cache: {e}")
+        self.logger.log_info(f"No valid cache found for {cache_filename}. Fetching new data.")
         return None
 
     def _save_cache(self, data: pd.DataFrame) -> None:

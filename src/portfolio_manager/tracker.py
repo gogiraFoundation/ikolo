@@ -14,11 +14,11 @@ from logs.logger import Logger
 class Tracker:
     """Class for tracking stock prices."""
 
-    def __init__(self):
+    def __init__(self, base_dir:str):
         """
         Initialize the Tracker instance.
         """
-        self.fetcher = DataFetcher()
+        self.fetcher = DataFetcher(base_dir=base_dir)
         self.logger =  Logger("Tracker")
         self.watchlist = []
     

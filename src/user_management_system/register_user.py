@@ -4,21 +4,24 @@ import hashlib
 import re
 import getpass
 import sys
+import bcrypt
 
 
 # Add the `src` directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
 from file_manager.fileManager import FileManager
 from logs.logger import Logger
 
+
 class RegisterUser:
-    def __init__(self, db_file="data/sys_file/user_db/user_database.json"):
+    def __init__(self, base_dir: str, db_file="data/sys_file/user_db/user_database.json"):
         """
         Initialize the RegisterUser class with a specified JSON database file.
         Creates the database directory if it doesn't exist.
         """
+        current_dir = os.getcwd()
         self.db_file = db_file
-        self.file_manager = FileManager()
+        self.file_manager = FileManager(base_dir=base_dir)
         self.logger = Logger("RegisterUser")
 
         # Ensure the database directory exists
@@ -30,6 +33,10 @@ class RegisterUser:
         Load the user database from the JSON file.
         Returns an empty list if the file is not found.
         """
+        if not os.path.exists(self.db_file):
+            self.logger.log_warning(f"Database file {self.db_file} does not exist. Creating a new one.")
+            return []
+
         try:
             data = self.file_manager.read_file(self.db_file)
             return json.loads(data) if data else []
@@ -49,9 +56,10 @@ class RegisterUser:
     @staticmethod
     def hash_password(password: str):
         """
-        Hash a password using SHA-256.
+        Hash a password using bcrypt.
         """
-        return hashlib.sha256(password.encode()).hexdigest()
+        salt = bcrypt.gensalt()
+        return bcrypt.hashpw(password.encode(), salt).decode()
 
     @staticmethod
     def validate_email(email: str):
@@ -98,7 +106,7 @@ class RegisterUser:
             self.logger.log_error("Error: User not found.")
             return False
 
-        if user["password"] == self.hash_password(password):
+        if bcrypt.checkpw(password.encode(), user["password"].encode()):
             self.logger.log_info(f"Welcome back, {user['first_name']}!")
             return True
         else:

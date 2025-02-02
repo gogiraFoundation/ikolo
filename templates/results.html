@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+Stock Analysis Results
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-primary">Stock Analysis Results</h1>
+    <p><strong>Ticker:</strong> {{ data['ticker'] }}</p>
+    <p><strong>Start Date:</strong> {{ data['start_date'] }}</p>
+    <p><strong>End Date:</strong> {{ data['end_date'] }}</p>
+    <p><strong>Analysis Result:</strong> {{ data['analysis_result'] }}</p>
+    <a href="/" class="btn btn-primary mt-4">Go back to the homepage</a>
+</div>
+{% endblock %}

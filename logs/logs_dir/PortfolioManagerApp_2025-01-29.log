@@ -1,0 +1,216 @@
+2025-01-29 09:05:22,016 - ERROR - Error loading configuration: name 'base_dir' is not defined
+2025-01-29 09:06:31,329 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:14:49,669 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:17:22,820 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:26:29,846 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:28:09,813 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:30:19,019 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:32:20,081 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:36:01,657 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:36:36,263 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:39:14,549 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:40:31,107 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:42:19,590 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:42:27,763 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:42:42,789 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:42:59,836 - INFO - Starting stock analysis for AAPL...
+2025-01-29 09:43:18,070 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:43:18,433 - INFO - Starting stock analysis for AAPL...
+2025-01-29 09:43:59,163 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:44:40,102 - INFO - Starting stock analysis for AAPL...
+2025-01-29 09:44:56,974 - INFO - 
+=== Analysis Results ===
+2025-01-29 09:44:56,974 - INFO - Stock: AAPL
+2025-01-29 09:44:56,974 - INFO - Advice: Hold
+2025-01-29 09:44:56,974 - INFO - 
+Fundamental Ratios:
+2025-01-29 09:44:56,988 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 09:44:56,993 - INFO - EPS (Trailing): 6.08
+2025-01-29 09:44:56,995 - INFO - Market Cap: 3582929928192
+2025-01-29 09:44:56,995 - INFO - Beta: 1.24
+2025-01-29 09:44:56,995 - INFO - Dividend Yield (%): 0.42
+2025-01-29 09:44:56,995 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 09:44:57,004 - INFO - PEG Ratio: N/A
+2025-01-29 09:44:57,006 - INFO - Revenue (TTM): 391034994688
+2025-01-29 09:44:57,009 - INFO - Gross Margin (%): 46.21
+2025-01-29 09:44:57,010 - INFO - Operating Margin (%): 31.17
+2025-01-29 09:44:57,013 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 09:44:57,013 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 09:48:15,399 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:52:41,808 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:52:54,350 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:54:42,140 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:54:58,014 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:55:30,445 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 09:55:51,827 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:21:14,408 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:21:17,197 - ERROR - Error during stock analysis for ticker AAPL: 'NoneType' object has no attribute 'empty'
+2025-01-29 10:21:30,898 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:21:59,705 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:22:33,285 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:23:02,501 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:23:08,579 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:23:09,432 - ERROR - Error during stock analysis for ticker AAPL: 'NoneType' object has no attribute 'empty'
+2025-01-29 10:23:54,779 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:23:54,809 - ERROR - Error during stock analysis for ticker AAPL: 'NoneType' object has no attribute 'empty'
+2025-01-29 10:24:30,956 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:24:37,812 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:24:58,099 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:24:59,586 - INFO - 
+=== Analysis Results ===
+2025-01-29 10:24:59,586 - INFO - Stock: AAPL
+2025-01-29 10:24:59,586 - INFO - Advice: Hold
+2025-01-29 10:24:59,586 - INFO - 
+Fundamental Ratios:
+2025-01-29 10:24:59,604 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 10:24:59,606 - INFO - EPS (Trailing): 6.08
+2025-01-29 10:24:59,610 - INFO - Market Cap: 3582929928192
+2025-01-29 10:24:59,610 - INFO - Beta: 1.24
+2025-01-29 10:24:59,615 - INFO - Dividend Yield (%): 0.42
+2025-01-29 10:24:59,615 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 10:24:59,619 - INFO - PEG Ratio: N/A
+2025-01-29 10:24:59,623 - INFO - Revenue (TTM): 391034994688
+2025-01-29 10:24:59,625 - INFO - Gross Margin (%): 46.21
+2025-01-29 10:24:59,625 - INFO - Operating Margin (%): 31.17
+2025-01-29 10:24:59,625 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 10:24:59,625 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 10:28:43,937 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:28:47,084 - INFO - 
+=== Analysis Results ===
+2025-01-29 10:28:47,084 - INFO - Stock: AAPL
+2025-01-29 10:28:47,084 - INFO - Advice: Hold
+2025-01-29 10:28:47,084 - INFO - 
+Fundamental Ratios:
+2025-01-29 10:28:47,094 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 10:28:47,094 - INFO - EPS (Trailing): 6.08
+2025-01-29 10:28:47,094 - INFO - Market Cap: 3582929928192
+2025-01-29 10:28:47,094 - INFO - Beta: 1.24
+2025-01-29 10:28:47,094 - INFO - Dividend Yield (%): 0.42
+2025-01-29 10:28:47,109 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 10:28:47,109 - INFO - PEG Ratio: N/A
+2025-01-29 10:28:47,109 - INFO - Revenue (TTM): 391034994688
+2025-01-29 10:28:47,109 - INFO - Gross Margin (%): 46.21
+2025-01-29 10:28:47,109 - INFO - Operating Margin (%): 31.17
+2025-01-29 10:28:47,125 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 10:28:47,125 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 10:30:12,449 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:30:12,935 - INFO - 
+=== Analysis Results ===
+2025-01-29 10:30:12,935 - INFO - Stock: AAPL
+2025-01-29 10:30:12,935 - INFO - Advice: Hold
+2025-01-29 10:30:12,951 - INFO - 
+Fundamental Ratios:
+2025-01-29 10:30:12,951 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 10:30:12,951 - INFO - EPS (Trailing): 6.08
+2025-01-29 10:30:12,951 - INFO - Market Cap: 3582929928192
+2025-01-29 10:30:12,951 - INFO - Beta: 1.24
+2025-01-29 10:30:12,951 - INFO - Dividend Yield (%): 0.42
+2025-01-29 10:30:12,967 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 10:30:12,967 - INFO - PEG Ratio: N/A
+2025-01-29 10:30:12,967 - INFO - Revenue (TTM): 391034994688
+2025-01-29 10:30:12,967 - INFO - Gross Margin (%): 46.21
+2025-01-29 10:30:12,967 - INFO - Operating Margin (%): 31.17
+2025-01-29 10:30:12,982 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 10:30:12,998 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 10:46:57,704 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:49:22,833 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:51:09,201 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:51:10,504 - INFO - 
+=== Analysis Results ===
+2025-01-29 10:51:10,504 - INFO - Stock: AAPL
+2025-01-29 10:51:10,504 - INFO - Advice: Hold
+2025-01-29 10:51:10,520 - INFO - 
+Fundamental Ratios:
+2025-01-29 10:51:10,523 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 10:51:10,527 - INFO - EPS (Trailing): 6.08
+2025-01-29 10:51:10,527 - INFO - Market Cap: 3582929928192
+2025-01-29 10:51:10,534 - INFO - Beta: 1.24
+2025-01-29 10:51:10,534 - INFO - Dividend Yield (%): 0.42
+2025-01-29 10:51:10,534 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 10:51:10,543 - INFO - PEG Ratio: N/A
+2025-01-29 10:51:10,547 - INFO - Revenue (TTM): 391034994688
+2025-01-29 10:51:10,547 - INFO - Gross Margin (%): 46.21
+2025-01-29 10:51:10,579 - INFO - Operating Margin (%): 31.17
+2025-01-29 10:51:10,587 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 10:51:10,587 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 10:51:18,355 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:51:39,574 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:51:48,614 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:52:25,349 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:54:07,635 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:54:44,996 - INFO - Starting stock analysis for AAPL...
+2025-01-29 10:54:47,902 - INFO - 
+=== Analysis Results ===
+2025-01-29 10:54:47,918 - INFO - Stock: AAPL
+2025-01-29 10:54:47,918 - INFO - Advice: Hold
+2025-01-29 10:54:47,918 - INFO - 
+Fundamental Ratios:
+2025-01-29 10:54:47,918 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 10:54:47,918 - INFO - EPS (Trailing): 6.08
+2025-01-29 10:54:47,934 - INFO - Market Cap: 3582929928192
+2025-01-29 10:54:47,934 - INFO - Beta: 1.24
+2025-01-29 10:54:47,934 - INFO - Dividend Yield (%): 0.42
+2025-01-29 10:54:47,934 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 10:54:47,949 - INFO - PEG Ratio: N/A
+2025-01-29 10:54:47,949 - INFO - Revenue (TTM): 391034994688
+2025-01-29 10:54:47,965 - INFO - Gross Margin (%): 46.21
+2025-01-29 10:54:47,965 - INFO - Operating Margin (%): 31.17
+2025-01-29 10:54:47,965 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 10:54:47,981 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 10:55:34,584 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 10:57:24,113 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:01:35,992 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:02:50,328 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:05:38,431 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:11:18,418 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:11:19,134 - INFO - Starting stock analysis for AAPL...
+2025-01-29 11:11:20,248 - INFO - 
+=== Analysis Results ===
+2025-01-29 11:11:20,248 - INFO - Stock: AAPL
+2025-01-29 11:11:20,248 - INFO - Advice: Hold
+2025-01-29 11:11:20,248 - INFO - 
+Fundamental Ratios:
+2025-01-29 11:11:20,248 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 11:11:20,258 - INFO - EPS (Trailing): 6.08
+2025-01-29 11:11:20,259 - INFO - Market Cap: 3582929928192
+2025-01-29 11:11:20,259 - INFO - Beta: 1.24
+2025-01-29 11:11:20,259 - INFO - Dividend Yield (%): 0.42
+2025-01-29 11:11:20,262 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 11:11:20,263 - INFO - PEG Ratio: N/A
+2025-01-29 11:11:20,263 - INFO - Revenue (TTM): 391034994688
+2025-01-29 11:11:20,263 - INFO - Gross Margin (%): 46.21
+2025-01-29 11:11:20,263 - INFO - Operating Margin (%): 31.17
+2025-01-29 11:11:20,263 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 11:11:20,271 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 11:11:45,743 - INFO - Starting stock analysis for AAPL...
+2025-01-29 11:11:46,088 - INFO - 
+=== Analysis Results ===
+2025-01-29 11:11:46,104 - INFO - Stock: AAPL
+2025-01-29 11:11:46,104 - INFO - Advice: Hold
+2025-01-29 11:11:46,104 - INFO - 
+Fundamental Ratios:
+2025-01-29 11:11:46,135 - INFO - P/E Ratio (Trailing): 39.1875
+2025-01-29 11:11:46,135 - INFO - EPS (Trailing): 6.08
+2025-01-29 11:11:46,151 - INFO - Market Cap: 3582929928192
+2025-01-29 11:11:46,151 - INFO - Beta: 1.24
+2025-01-29 11:11:46,167 - INFO - Dividend Yield (%): 0.42
+2025-01-29 11:11:46,167 - INFO - Price-to-Book Ratio (P/B): 63.249268
+2025-01-29 11:11:46,182 - INFO - PEG Ratio: N/A
+2025-01-29 11:11:46,182 - INFO - Revenue (TTM): 391034994688
+2025-01-29 11:11:46,182 - INFO - Gross Margin (%): 46.21
+2025-01-29 11:11:46,198 - INFO - Operating Margin (%): 31.17
+2025-01-29 11:11:46,198 - INFO - Net Profit Margin (%): 23.97
+2025-01-29 11:11:46,214 - INFO - Stock analysis for AAPL completed successfully.
+2025-01-29 11:16:36,645 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:20:31,669 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:21:07,390 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:34:49,034 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:34:55,166 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:40:38,427 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:41:14,455 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:41:29,872 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:42:03,689 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:43:44,131 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 11:47:04,410 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 12:07:07,582 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}
+2025-01-29 12:07:24,672 - INFO - Configuration loaded: {'base_directory': 'src', 'default_tickers': ['AAPL', 'MSFT', 'GOOGL'], 'data_directory': 'data', 'watchlist_subdir': 'watchlist', 'portfolio_subdir': 'portfolio'}

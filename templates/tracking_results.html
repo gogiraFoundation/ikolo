@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+Stock Tracking Results
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-primary">Stock Tracking Results</h1>
+    <p class="fs-5">{{ data['message'] }}</p>
+    <a href="/" class="btn btn-primary mt-3">Go back to the homepage</a>
+</div>
+{% endblock %}

@@ -14,7 +14,7 @@ class StockSearcher:
 
     CACHE_EXPIRY = timedelta(days=1)  # Cache expiry time
 
-    def __init__(self, tickers: list, db_path: str = "data/cache.db"):
+    def __init__(self, tickers: list, base_dir: str, db_path: str = "data/cache.db"):
         """
         Initialize the StockSearcher instance.
 
@@ -24,7 +24,7 @@ class StockSearcher:
         """
         self.tickers = tickers
         self.db_path = db_path
-        self.file_manager = FileManager()
+        self.file_manager = FileManager(base_dir=base_dir)
         self.connection = None
         self._initialize_cache()
 
